@@ -14,7 +14,7 @@ cat YOUR-DATA-FILE.csv | while read line; do
 
 		signal=$(echo ${WORD_LIST[2]}|sed -e 's/^"//'  -e 's/"$//')
 
-  		requette="http://YOUR-SERVICE?id=YOUR-DEVICE&time=$timestamp&data=$data&station=0000&signal=$signal&duplicate=false&udm=2.2&project=projet_0001_test"
+  		requette="http://YOUR-SERVICE?id=YOUR-DEVICE&time=$timestamp&data=$data&station=0000&signal=$signal&duplicate=false&udm=2.2&OTHER-DATA"
   		echo "$requette"
 
   		curl -i  --request POST $requette | sed -n 1p
